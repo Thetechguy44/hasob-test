@@ -1,0 +1,63 @@
+{
+    "name": "orchestra/dusk-updater",
+    "description": "Updater for Laravel Dusk ChromeDriver binaries",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonas Staudenmeir",
+            "email": "mail@jonas-staudenmeir.de"
+        },
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@gmail.com"
+        }
+    ],
+    "bin": [
+        "dusk-updater"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Orchestra\\DuskUpdater\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orchestra\\DuskUpdater\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "ext-openssl": "*",
+        "ext-zip": "*",
+        "composer-runtime-api": "^2.2",
+        "composer/semver": "^1.5 || ^3.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "illuminate/support": ">=5.7.0",
+        "symfony/console": "^4.3.4 || ^5.0 || ^6.0",
+        "symfony/polyfill-ctype": "^1.9",
+        "symfony/process": "^4.3.4 || ^5.0 || ^6.0"
+    },
+    "require-dev": {
+        "laravel/dusk": "^5.8.2 || ^6.0 || ^7.0 || ^8.0",
+        "phpstan/phpstan": "^1.10.7",
+        "phpunit/phpunit": "^9.6"
+    },
+    "conflict": {
+        "laravel/dusk": ">=9.0.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "scripts": {
+        "test": "@php vendor/bin/phpunit -c ./ --color"
+    },
+    "minimum-stability": "stable"
+}
