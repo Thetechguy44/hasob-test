@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'dmo/savings-bond-module',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => 'cd30874a0ed05c0fa432d684bbeec961dda5d861',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -68,9 +68,9 @@
             'dev_requirement' => false,
         ),
         'dmo/savings-bond-module' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'cd30874a0ed05c0fa432d684bbeec961dda5d861',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
