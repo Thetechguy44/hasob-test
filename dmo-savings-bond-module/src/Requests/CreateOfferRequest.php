@@ -26,11 +26,11 @@ class CreateOfferRequest extends AppBaseFormRequest
     public function rules()
     {
         return [
-            'organization_id' => 'required',
+        'organization_id' => 'required',
         'display_ordinal' => 'nullable|min:0|max:365',
         'wf_status' => 'max:100',
         'wf_meta_data' => 'max:1000',
-        'offer_title' => 'required|email',
+        'offer_title' => 'required|string|max:255',
         'price_per_unit' => 'required|min:0|max:100000000',
         'max_units_per_investor' => 'required|min:1|max:1000000000',
         'interest_rate_pct' => 'required|min:0|max:100',
