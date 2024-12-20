@@ -149,7 +149,7 @@ class Subscription extends Model
      **/
     public function offer()
     {
-        return $this->hasOne(\DMO\SavingsBond\Models\Offer::class, 'offer_id', 'id');
+        return $this->hasOne(\DMO\SavingsBond\Models\Offer::class);
     }
 
     /**

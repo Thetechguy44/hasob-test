@@ -2,15 +2,20 @@
 
 namespace DMO\SavingsBond\Models;
 
-use Hasob\FoundationCore\Traits\GuidId;
-use Hasob\FoundationCore\Traits\Ledgerable;
-use Hasob\FoundationCore\Traits\Artifactable;
-use Hasob\FoundationCore\Traits\OrganizationalConstraint;
-
 use Eloquent as Model;
+use Hasob\FoundationCore\Traits\GuidId;
+use DMO\SavingsBond\Events\OfferCreated;
+use DMO\SavingsBond\Events\OfferDeleted;
 
+use DMO\SavingsBond\Events\OfferUpdated;
+
+use DMO\SavingsBond\Models\Subscription;
+use Hasob\FoundationCore\Traits\Ledgerable;
+use Hasob\FoundationCore\Models\Organization;
+use Hasob\FoundationCore\Traits\Artifactable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Hasob\FoundationCore\Traits\OrganizationalConstraint;
 
 /**
  * Class Offer
@@ -46,6 +51,7 @@ class Offer extends Model
 
 
     public $fillable = [
+        'id',
         'organization_id',
         'status',
         'offer_title',
@@ -76,7 +82,14 @@ class Offer extends Model
         'tenor_years' => 'integer'
     ];
 
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
 
-    
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }    
 
 }
