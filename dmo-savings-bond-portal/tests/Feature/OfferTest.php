@@ -198,5 +198,27 @@ class OfferTest extends TestCase
         ]);
     }
 
+    /** @test */
+    public function offer_belongs_to_organization_relationship()
+    {
+        $offer = $this->createOffer([
+            'organization_id' => $this->organization->id,
+        ]);
+
+        $this->assertEquals($offer->organization_id, $this->organization->id);
+    }
+
+    /** @test */
+    public function checks_relationship_of_offer_with_subscription()
+    {
+        $offer = $this->createOffer();
+        $subscription = $this->createSubscription([
+            'offer_id' => $offer->id,
+            'organization_id' => $this->organization->id,
+        ]);
+
+        $this->assertTrue($offer->subscriptions->contains($subscription));
+    }
+
 
 }
