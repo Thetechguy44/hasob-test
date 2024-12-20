@@ -132,5 +132,71 @@ class OfferTest extends TestCase
         ], $overrides));
     }    
 
+    /** @test */
+    public function it_creates_an_offer_record()
+    {
+        $offerData = [
+            'organization_id' => $this->organization->id,
+            'status' => 'active',
+            'offer_title' => 'Test Offer',
+            'price_per_unit' => 1000.50,
+            'max_units_per_investor' => 5,
+            'interest_rate_pct' => 2.5,
+            'offer_start_date' => now()->toDateString(),
+            'offer_end_date' => now()->addDays(10)->toDateString(),
+            'offer_settlement_date' => now()->addDays(15)->toDateString(),
+            'offer_maturity_date' => now()->addYear()->toDateString(),
+            'tenor_years' => 1,
+        ];
+
+        $offer = Offer::create($offerData);
+
+        $this->assertDatabaseHas('sb_offers', [
+            'id' => $offer->id,
+            'organization_id' => $this->organization->id,
+            'offer_title' => 'Test Offer',
+        ]);
+    }
+
+    /** @test */
+    public function it_retrieves_offer_records()
+    {
+        $offer = $this->createOffer([
+            'offer_title' => 'Retrieved Offer',
+        ]);
+
+        $retrievedOffer = Offer::find($offer->id);
+
+        $this->assertNotNull($retrievedOffer);
+        $this->assertEquals('Retrieved Offer', $retrievedOffer->offer_title);
+    }
+
+    /** @test */
+    public function it_updates_an_offer_record()
+    {
+        $offer = $this->createOffer();
+
+        $offer->update([
+            'offer_title' => 'Updated Title',
+        ]);
+
+        $this->assertDatabaseHas('sb_offers', [
+            'id' => $offer->id,
+            'offer_title' => 'Updated Title',
+        ]);
+    }
+
+    /** @test */
+    public function it_deletes_an_offer_record()
+    {
+        $offer = $this->createOffer();
+
+        $offer->delete();
+
+        $this->assertSoftDeleted('sb_offers', [
+            'id' => $offer->id,
+        ]);
+    }
+
 
 }
