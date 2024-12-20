@@ -220,5 +220,50 @@ class OfferTest extends TestCase
         $this->assertTrue($offer->subscriptions->contains($subscription));
     }
 
+    /** @test */
+    public function it_fires_offer_created_event()
+    {
+        Event::fake();
 
+        // Create the offer with the specified UUID
+        $offer = $this->createOffer(['id' => $this->faker->uuid,]);
+
+        // Assert the OfferCreated event was dispatched
+        Event::assertDispatched(OfferCreated::class, function ($event) use ($offer) {
+            return $event->offer->id === $offer->id;
+        });
+    }
+
+    /** @test */
+    public function it_fires_offer_updated_event()
+    {
+        Event::fake();
+
+        // Create the offer with the specified UUID
+        $offer = $this->createOffer(['id' => $this->faker->uuid,]);
+
+        $offer->update([
+            'offer_title' => 'Updated Offer'
+        ]);
+
+        // Assert the OfferUpdated event was dispatched
+        Event::assertDispatched(OfferUpdated::class, function ($event) use ($offer) {
+            return $event->offer->id === $offer->id && $event->offer->offer_title === 'Updated Offer';
+        });
+    }
+
+    /** @test */
+    public function it_fires_offer_deleted_event()
+    {
+        Event::fake();
+
+        // Create the offer with the specified UUID
+        $offer = $this->createOffer(['id' => $this->faker->uuid,]);
+
+        $offer->delete();
+
+        Event::assertDispatched(OfferDeleted::class, function ($event) use ($offer) {
+            return $event->offer->id === $offer->id;
+        });
+    }
 }
