@@ -84,7 +84,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ZvkEftlGfnuVtmyJ',
+            '_route' => 'generated::YryvZCugY6Zj97Gi',
           ),
           1 => NULL,
           2 => 
@@ -1225,7 +1225,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YXWvh1JQV4leRGIv',
+            '_route' => 'generated::BwKv8GWPrIgOO8NV',
           ),
           1 => NULL,
           2 => 
@@ -1280,7 +1280,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::j3zM6FgIwT6mwdCi',
+            '_route' => 'generated::Ko11h7jTr3BhWCSF',
           ),
           1 => NULL,
           2 => 
@@ -1371,7 +1371,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::cgd1fdeITfyC9CqX',
+            '_route' => 'generated::FqkZzZCm334WXrBe',
           ),
           1 => NULL,
           2 => 
@@ -7107,7 +7107,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ZvkEftlGfnuVtmyJ' => 
+    'generated::YryvZCugY6Zj97Gi' => 
     array (
       'methods' => 
       array (
@@ -7128,7 +7128,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::ZvkEftlGfnuVtmyJ',
+        'as' => 'generated::YryvZCugY6Zj97Gi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -12324,7 +12324,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YXWvh1JQV4leRGIv' => 
+    'generated::BwKv8GWPrIgOO8NV' => 
     array (
       'methods' => 
       array (
@@ -12345,7 +12345,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::YXWvh1JQV4leRGIv',
+        'as' => 'generated::BwKv8GWPrIgOO8NV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -12436,7 +12436,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::j3zM6FgIwT6mwdCi' => 
+    'generated::Ko11h7jTr3BhWCSF' => 
     array (
       'methods' => 
       array (
@@ -12457,7 +12457,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::j3zM6FgIwT6mwdCi',
+        'as' => 'generated::Ko11h7jTr3BhWCSF',
       ),
       'fallback' => false,
       'defaults' => 
@@ -12661,7 +12661,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::cgd1fdeITfyC9CqX' => 
+    'generated::FqkZzZCm334WXrBe' => 
     array (
       'methods' => 
       array (
@@ -12682,7 +12682,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::cgd1fdeITfyC9CqX',
+        'as' => 'generated::FqkZzZCm334WXrBe',
       ),
       'fallback' => false,
       'defaults' => 
@@ -12751,7 +12751,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'Hasob\\FoundationCore\\Middleware\\IdentifyOrganization',
         ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:242:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:26:"function () { phpinfo(); }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"00000000000008970000000000000000";}";s:4:"hash";s:44:"cBJAuOERUDI83jeeUpXtWsyKL5SWMfvfZ2E787l6QmI=";}}',
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:242:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:26:"function () { phpinfo(); }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"0000000000000f0a0000000000000000";}";s:4:"hash";s:44:"LQSrlsp32tuDax9qPg0Joa0jlZ1bz/P5fxdcbbHXmdI=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -12794,7 +12794,7 @@ app('router')->setCompiledRoutes(
             \\Artisan::call(\'clear-compiled\');
             \\Artisan::call(\'optimize\');
             return "Cache is cleared ... Check again";
-        }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"0000000000000ce10000000000000000";}";s:4:"hash";s:44:"ZNQ0vQ+53nrasVg7TSc0bVsClJ9g8U4zViovR3Nvi0g=";}}',
+        }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"0000000000000f950000000000000000";}";s:4:"hash";s:44:"ZHjt3Swhz6ZLRXUuw2dIxCciCCgDx6AixC4ZZXTHc9M=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -19762,7 +19762,7 @@ app('router')->setCompiledRoutes(
                 $response = response(trim($user->profile_image))->header(\'Content-Type\', $content_type);
                 ob_end_clean();
                 return $response;
-            }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"0000000000000d9a0000000000000000";}";s:4:"hash";s:44:"uwXLcM2H38hpUWrWLDMOy2Cu34lQ+V9PXeyrj4qpvw4=";}}',
+            }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"000000000000104e0000000000000000";}";s:4:"hash";s:44:"1LeDbZoFG6+00aBlw8mVUZpfPdvcg8ecmpuJpDiawGc=";}}',
         'as' => 'fc.get-profile-picture',
         'namespace' => NULL,
         'prefix' => '/fc',
@@ -19806,7 +19806,7 @@ app('router')->setCompiledRoutes(
                 $response = response(trim($dept->logo_image))->header(\'Content-Type\', $content_type);
                 ob_end_clean();
                 return $response;
-            }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"0000000000000d9c0000000000000000";}";s:4:"hash";s:44:"PL8pcHVnjW3uFMpq9v6urPtk/byDvKTnaEsS9OHZrK4=";}}',
+            }";s:5:"scope";s:35:"Hasob\\FoundationCore\\FoundationCore";s:4:"this";N;s:4:"self";s:32:"00000000000010500000000000000000";}";s:4:"hash";s:44:"dY8K8c+ca+0AXTrEjm1mRTBz2weQghC8LIqo+HjXcgo=";}}',
         'as' => 'fc.get-dept-picture',
         'namespace' => NULL,
         'prefix' => '/fc',
