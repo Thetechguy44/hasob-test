@@ -99,17 +99,17 @@ $(document).ready(function() {
 
         $.get( "{{ route('sb-api.offers.show','') }}/"+itemId).done(function( response ) {
 			
-			$('#txt-offer-primary-id').val(response.data.id);
-            		$('#spn_offer_status').html(response.data.status);
-		$('#spn_offer_offer_title').html(response.data.offer_title);
-		$('#spn_offer_price_per_unit').html(response.data.price_per_unit);
-		$('#spn_offer_max_units_per_investor').html(response.data.max_units_per_investor);
-		$('#spn_offer_interest_rate_pct').html(response.data.interest_rate_pct);
-		$('#spn_offer_offer_start_date').html(response.data.offer_start_date);
-		$('#spn_offer_offer_end_date').html(response.data.offer_end_date);
-		$('#spn_offer_offer_settlement_date').html(response.data.offer_settlement_date);
-		$('#spn_offer_offer_maturity_date').html(response.data.offer_maturity_date);
-		$('#spn_offer_tenor_years').html(response.data.tenor_years);
+            $('#txt-offer-primary-id').val(response.data.id);
+            $('#spn_offer_status').html(response.data.status);
+            $('#spn_offer_offer_title').html(response.data.offer_title);
+            $('#spn_offer_price_per_unit').html(response.data.price_per_unit);
+            $('#spn_offer_max_units_per_investor').html(response.data.max_units_per_investor);
+            $('#spn_offer_interest_rate_pct').html(response.data.interest_rate_pct);
+            $('#spn_offer_offer_start_date').html(response.data.offer_start_date);
+            $('#spn_offer_offer_end_date').html(response.data.offer_end_date);
+            $('#spn_offer_offer_settlement_date').html(response.data.offer_settlement_date);
+            $('#spn_offer_offer_maturity_date').html(response.data.offer_maturity_date);
+            $('#spn_offer_tenor_years').html(response.data.tenor_years);
 
 
             $("#spinner-offers").hide();
@@ -181,7 +181,7 @@ $(document).ready(function() {
             }, function(isConfirm) {
                 if (isConfirm) {
 
-                    let endPointUrl = "{{ route('sb-api.offers.destroy','') }}/"+itemId;
+                    let endPointUrl = "{{ route('sb.offers.destroy','') }}/"+itemId;
 
                     let formData = new FormData();
                     formData.append('_token', $('input[name="_token"]').val());
@@ -210,12 +210,14 @@ $(document).ready(function() {
                                         closeOnConfirm: false
                                     },function(){
                                         location.reload(true);
-                                });
+                                    }
+                                );
                             }
                         },
                     });
                 }
-            });
+            }
+        );
 
     });
 
