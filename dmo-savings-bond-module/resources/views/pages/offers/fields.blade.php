@@ -1,3 +1,15 @@
+<!-- Organisation Field -->
+<div id="div-organization" class="form-group">
+    <label for="organization_id" class="col-lg-3 col-form-label">Organisation</label>
+    <div class="col-lg-9">
+        {!! Form::select(
+            'organization_id', $organizations, null, [
+                'id' => 'organization_id', 'class' => 'form-control'
+                ]) 
+        !!}
+    </div>
+</div>
+
 <!-- Status Field -->
 <div id="div-status" class="form-group">
     <label for="status" class="col-lg-3 col-form-label">Status</label>
@@ -45,7 +57,7 @@
 <div id="div-offer_start_date" class="form-group">
     <label for="offer_start_date" class="col-lg-3 col-form-label">Offer Start Date</label>
     <div class="col-lg-9">
-        {!! Form::text('offer_start_date', null, ['id'=>'offer_start_date', 'class' => 'form-control']) !!}
+        {!! Form::date('offer_start_date', null, ['id'=>'offer_start_date', 'class' => 'form-control']) !!}
     </div>
 </div>
 
@@ -53,7 +65,7 @@
 <div id="div-offer_end_date" class="form-group">
     <label for="offer_end_date" class="col-lg-3 col-form-label">Offer End Date</label>
     <div class="col-lg-9">
-        {!! Form::text('offer_end_date', null, ['id'=>'offer_end_date', 'class' => 'form-control']) !!}
+        {!! Form::date('offer_end_date', null, ['id'=>'offer_end_date', 'class' => 'form-control']) !!}
     </div>
 </div>
 
@@ -61,7 +73,7 @@
 <div id="div-offer_settlement_date" class="form-group">
     <label for="offer_settlement_date" class="col-lg-3 col-form-label">Offer Settlement Date</label>
     <div class="col-lg-9">
-        {!! Form::text('offer_settlement_date', null, ['id'=>'offer_settlement_date', 'class' => 'form-control']) !!}
+        {!! Form::date('offer_settlement_date', null, ['id'=>'offer_settlement_date', 'class' => 'form-control']) !!}
     </div>
 </div>
 
@@ -69,7 +81,7 @@
 <div id="div-offer_maturity_date" class="form-group">
     <label for="offer_maturity_date" class="col-lg-3 col-form-label">Offer Maturity Date</label>
     <div class="col-lg-9">
-        {!! Form::text('offer_maturity_date', null, ['id'=>'offer_maturity_date', 'class' => 'form-control']) !!}
+        {!! Form::date('offer_maturity_date', null, ['id'=>'offer_maturity_date', 'class' => 'form-control']) !!}
     </div>
 </div>
 

@@ -38,7 +38,7 @@ Offers
         </div>
     </div>
 
-    @include('dmo-savings-bond-module::pages.offers.modal')
+    @include('dmo-savings-bond-module::pages.offers.modal', ['organizations' => $organizations])
 @stop
 
 @section('side-panel')

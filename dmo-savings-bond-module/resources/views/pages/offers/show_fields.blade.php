@@ -1,4 +1,18 @@
 <!-- Status Field -->
+<div id="div_organization" class="col-sm-12 mb-10">
+    <p>
+        {!! Form::label('organization_id', 'Organization:', ['class'=>'control-label']) !!} 
+        <span id="spn_organization">
+        @if (isset($offer->organization_id) && empty($offer->organization_id)==false)
+            {!! $offer->organization_id !!}
+        @else
+            N/A
+        @endif
+        </span>
+    </p>
+</div>
+
+<!-- Status Field -->
 <div id="div_offer_status" class="col-sm-12 mb-10">
     <p>
         {!! Form::label('status', 'Status:', ['class'=>'control-label']) !!} 
