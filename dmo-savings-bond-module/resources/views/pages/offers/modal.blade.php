@@ -34,7 +34,7 @@
                             <div id="div-edit-txt-offer-primary-id">
                                 <div class="row">
                                     <div class="col-lg-10 ma-10">
-                                    @include('dmo-savings-bond-module::pages.offers.fields')
+                                    @include('dmo-savings-bond-module::pages.offers.fields', ['organizations' => $organizations])
                                     </div>
                                 </div>
                             </div>
@@ -135,8 +135,9 @@ $(document).ready(function() {
 
         $.get( "{{ route('sb-api.offers.show','') }}/"+itemId).done(function( response ) {     
 
-			$('#txt-offer-primary-id').val(response.data.id);
-            		$('#status').val(response.data.status);
+		$('#txt-offer-primary-id').val(response.data.id);
+        $('#organization_id').val(response.data.organization_id);
+        $('#status').val(response.data.status);
 		$('#offer_title').val(response.data.offer_title);
 		$('#price_per_unit').val(response.data.price_per_unit);
 		$('#max_units_per_investor').val(response.data.max_units_per_investor);
@@ -236,7 +237,7 @@ $(document).ready(function() {
         $("#div-save-mdl-offer-modal").attr('disabled', true);
 
         let actionType = "POST";
-        let endPointUrl = "{{ route('sb-api.offers.store') }}";
+        let endPointUrl = "{{ route('sb.offers.store') }}";
         let primaryId = $('#txt-offer-primary-id').val();
         
         let formData = new FormData();
@@ -244,7 +245,7 @@ $(document).ready(function() {
 
         if (primaryId != "0"){
             actionType = "PUT";
-            endPointUrl = "{{ route('sb-api.offers.update','') }}/"+primaryId;
+            endPointUrl = "{{ route('sb.offers.update','') }}/"+primaryId;
             formData.append('id', primaryId);
         }
         
@@ -253,7 +254,7 @@ $(document).ready(function() {
             formData.append('organization_id', '{{$organization->id}}');
         @endif
         // formData.append('', $('#').val());
-        		formData.append('status', $('#status').val());
+        formData.append('status', $('#status').val());
 		formData.append('offer_title', $('#offer_title').val());
 		formData.append('price_per_unit', $('#price_per_unit').val());
 		formData.append('max_units_per_investor', $('#max_units_per_investor').val());
