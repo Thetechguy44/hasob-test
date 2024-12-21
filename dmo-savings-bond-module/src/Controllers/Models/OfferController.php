@@ -33,6 +33,7 @@ class OfferController extends BaseController
     public function index(Organization $org, OfferDataTable $offerDataTable)
     {
         $current_user = Auth()->user();
+        $organizations = Organization::pluck('org', 'id');
 
         $cdv_offers = new \Hasob\FoundationCore\View\Components\CardDataView(Offer::class, "dmo-savings-bond-module::pages.offers.card_view_item");
         $cdv_offers->setDataQuery(['organization_id'=>$org->id])
@@ -53,6 +54,7 @@ class OfferController extends BaseController
                     ->with('current_user', $current_user)
                     ->with('months_list', BaseController::monthsList())
                     ->with('states_list', BaseController::statesList())
+                    ->with('organizations', $organizations)
                     ->with('cdv_offers', $cdv_offers);
 
         /*
