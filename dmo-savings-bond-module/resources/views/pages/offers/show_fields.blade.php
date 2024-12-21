@@ -4,7 +4,7 @@
         {!! Form::label('organization_id', 'Organization:', ['class'=>'control-label']) !!} 
         <span id="spn_organization">
         @if (isset($offer->organization_id) && empty($offer->organization_id)==false)
-            {!! $offer->organization_id !!}
+            {!! $offer->organization->org !!}
         @else
             N/A
         @endif
