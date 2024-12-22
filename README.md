@@ -21,8 +21,8 @@ The DMO Savings bond is a portal that allows investors to buy bonds. The applica
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
+   git clone https://github.com/Thetechguy44/hasob-test.git
+   cd hasob-test
    ```
 The repo contains 3 packages. Please navigate to the cloned repo and confirm the following:
    a. The composer.json file in dmo-savings-bond-portal contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
