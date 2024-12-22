@@ -1,9 +1,9 @@
 # DMO Savings bond
 
 The DMO Savings bond is a portal that allows investors to buy bonds. The application comprises of 3 main packages:
-   a. dmo-savings-bond-portal:- a web application
-   b. dmo-savings-bond-module:- a library containing the models, controllers, etc. for the savings bond app.
-   c. hasob-foundation-core-bs-5:- a helper library with reusable components.
+- dmo-savings-bond-portal:- a web application
+- dmo-savings-bond-module:- a library containing the models, controllers, etc. for the savings bond app.
+- hasob-foundation-core-bs-5:- a helper library with reusable components.
 
 ## Application Entities
 
