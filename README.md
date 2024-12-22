@@ -25,15 +25,15 @@ The DMO Savings bond is a portal that allows investors to buy bonds. The applica
    cd hasob-test
    ```
 The repo contains 3 packages. Please navigate to the cloned repo and confirm the following:
-   a. The composer.json file in dmo-savings-bond-portal contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
-   b. The composer.json file in dmo-savings-bond-module contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
+- The composer.json file in dmo-savings-bond-portal contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
+- The composer.json file in dmo-savings-bond-module contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
 
 2. Install dependencies: Run composer install from inside hasob-foundation-core-bs-5 package and then from inside dmo-savings-bond-module, and then from inside dmo-savings-bond-portal. This should resolve your package dependencies.
    ```
    composer install
    ```
 
-3. Copy the `.env.example` file to `.env` and configure your environment variables: Then from inside dmo-savings-bond-portal, ensure you have setup your local database.
+3. Copy the `.env.example` file to `.env` and configure your environment variables from inside dmo-savings-bond-portal, ensure you have setup your local database:
    ```
    cp .env.example .env
    ```
@@ -43,7 +43,7 @@ The repo contains 3 packages. Please navigate to the cloned repo and confirm the
    php artisan key:generate
    ```
 
-5. Run database migrations: From inside dmo-savings-bond-portal, migrate to setup your tables in the database.
+5. Run database migrations: Migrate to setup your tables in the database, from inside dmo-savings-bond-portal.
    ```
    php artisan migrate
    ```
@@ -61,7 +61,9 @@ The repo contains 3 packages. Please navigate to the cloned repo and confirm the
    ```
    http://127.0.0.1:8000
    ```
-9. Please login with the following credentials, admin@app.com/password
+9. Please login with the following credentials:
+- Email: admin@app.com
+- Password: password
 
 ## Running Tests
 
