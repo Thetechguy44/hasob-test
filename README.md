@@ -1,22 +1,21 @@
-# Library Management System API
+# DMO Savings bond
 
-This is a RESTful API for a Library Management System built with Laravel 11.
+The DMO Savings bond is a portal that allows investors to buy bonds. The application comprises of 3 main packages:
+   a. dmo-savings-bond-portal:- a web application
+   b. dmo-savings-bond-module:- a library containing the models, controllers, etc. for the savings bond app.
+   c. hasob-foundation-core-bs-5:- a helper library with reusable components.
 
-## Features
+## Application Entities
 
-- CRUD operations for Books, Authors, and Users
-- Book borrowing and returning functionality
-- Role-based access control (Admin, Librarian, Member)
-- Search functionality for books
-- API documentation with Swagger/OpenAPI
-- Caching for improved performance
-- Docker containerization
+- Bond Offer:- A bond being offered for subscription by investors
+- Investor:- A person subscribing to a bond offer.
+- Broker:- Every Investor has a broker that manages their account.
+- Subscription:- A successfully purchased bond offer by an investor.
 
 ## Requirements
 
-- PHP 8.2+
+- PHP 7.3 | 8.0+
 - Composer
-- Docker and Docker Compose (optional)
 
 ## Setup Instructions
 
@@ -25,58 +24,44 @@ This is a RESTful API for a Library Management System built with Laravel 11.
    git clone https://github.com/yourusername/library-management-system.git
    cd library-management-system
    ```
+The repo contains 3 packages. Please navigate to the cloned repo and confirm the following:
+   a. The composer.json file in dmo-savings-bond-portal contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
+   b. The composer.json file in dmo-savings-bond-module contains local dependency on dmo-savings-bond-module and hasob-foundation-core-bs-5
 
-2. Install dependencies:
+2. Install dependencies: Run composer install from inside hasob-foundation-core-bs-5 package and then from inside dmo-savings-bond-module, and then from inside dmo-savings-bond-portal. This should resolve your package dependencies.
    ```
    composer install
    ```
 
-3. Copy the `.env.example` file to `.env` and configure your environment variables:
+3. Copy the `.env.example` file to `.env` and configure your environment variables: Then from inside dmo-savings-bond-portal, ensure you have setup your local database.
    ```
    cp .env.example .env
    ```
 
-4. Generate an application key:
+4. Generate an application key from inside dmo-savings-bond-portal:
    ```
    php artisan key:generate
    ```
 
-5. Run database migrations:
+5. Run database migrations: From inside dmo-savings-bond-portal, migrate to setup your tables in the database.
    ```
    php artisan migrate
    ```
 
-6. (Optional) Seed the database with sample data:
+6. (Optional) Seed the database with sample data from inside dmo-savings-bond-portal:
    ```
    php artisan db:seed
    ```
 
-7. Start the development server:
+7. Start the development server: Finally, run php artisan serve from inside dmo-savings-bond-portal to start the application
    ```
    php artisan serve
    ```
-
-## Running with Docker
-
-1. Build and start the Docker containers:
+8. The application should be running on your localhost at
    ```
-   docker-compose up -d --build
+   http://127.0.0.1:8000
    ```
-
-2. Access the application container:
-   ```
-   docker-compose exec app bash
-   ```
-
-3. Run the setup commands (steps 2-6 from the regular setup) inside the container.
-
-## API Documentation
-
-After setting up the project, you can access the API documentation at:
-
-```
-http://localhost:8000/api/documentation
-```
+9. Please login with the following credentials, admin@app.com/password
 
 ## Running Tests
 
@@ -85,7 +70,4 @@ To run the feature tests:
 ```
 php artisan test
 ```
-
-## License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Don't forget to migrate your database table again after running tests.
