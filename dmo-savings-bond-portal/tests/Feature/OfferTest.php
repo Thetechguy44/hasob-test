@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Tests\TestCase;
 use Illuminate\Support\Str;
 use DMO\SavingsBond\Models\Offer;
-use DMO\SavingsBond\Models\Broker;
 
 use Illuminate\Support\Facades\Hash;
 use Hasob\FoundationCore\Models\User;
@@ -15,7 +14,6 @@ use Illuminate\Support\Facades\Event;
 use DMO\SavingsBond\Events\OfferCreated;
 use DMO\SavingsBond\Events\OfferDeleted;
 use DMO\SavingsBond\Events\OfferUpdated;
-use DMO\SavingsBond\Models\Subscription;
 use Illuminate\Foundation\Testing\WithFaker;
 use Hasob\FoundationCore\Models\Organization;
 use Illuminate\Foundation\Testing\RefreshDatabase;
