@@ -82,16 +82,10 @@ class Offer extends Model
         'tenor_years' => 'integer'
     ];
 
-
-
-    public function organization()
-    {
-        return $this->belongsTo(Organization::class);
-    }
-
-    public function subscriptions()
-    {
-        return $this->hasMany(Subscription::class);
-    }    
+    protected $dispatchesEvents = [
+        'created' => OfferCreated::class,
+        'updated' => OfferUpdated::class,
+        'deleted' => OfferDeleted::class
+    ];
 
 }
