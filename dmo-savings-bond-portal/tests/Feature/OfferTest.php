@@ -26,8 +26,6 @@ class OfferTest extends TestCase
     use WithFaker;
 
     protected $organization;
-    protected $broker;
-    protected $test_user;
 
     protected function setUp(): void
     {
