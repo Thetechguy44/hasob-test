@@ -33,7 +33,7 @@
                             </div>
                             <div id="div-edit-txt-offer-primary-id">
                                 <div class="row">
-                                    <div class="col-lg-10 ma-10">
+                                    <div class="col-lg-12 ma-10">
                                     @include('dmo-savings-bond-module::pages.offers.fields', ['organizations' => $organizations])
                                     </div>
                                 </div>
@@ -133,25 +133,37 @@ $(document).ready(function() {
         $('#div-edit-txt-offer-primary-id').show();
         let itemId = $(this).attr('data-val');
 
-        $.get( "{{ route('sb-api.offers.show','') }}/"+itemId).done(function( response ) {     
-
-		$('#txt-offer-primary-id').val(response.data.id);
+        $.get("{{ route('sb-api.offers.show','') }}/"+itemId).done(function(response) {     
+        $('#txt-offer-primary-id').val(response.data.id);
         $('#organization_id').val(response.data.organization_id);
         $('#status').val(response.data.status);
-		$('#offer_title').val(response.data.offer_title);
-		$('#price_per_unit').val(response.data.price_per_unit);
-		$('#max_units_per_investor').val(response.data.max_units_per_investor);
-		$('#interest_rate_pct').val(response.data.interest_rate_pct);
-		$('#offer_start_date').val(response.data.offer_start_date);
-		$('#offer_end_date').val(response.data.offer_end_date);
-		$('#offer_settlement_date').val(response.data.offer_settlement_date);
-		$('#offer_maturity_date').val(response.data.offer_maturity_date);
-		$('#tenor_years').val(response.data.tenor_years);
+        $('#offer_title').val(response.data.offer_title);
+        $('#price_per_unit').val(response.data.price_per_unit);
+        $('#max_units_per_investor').val(response.data.max_units_per_investor);
+        $('#interest_rate_pct').val(response.data.interest_rate_pct);
 
+        // Convert date format to YYYY-MM-DD if needed
+        $('#offer_start_date').val(formatDate(response.data.offer_start_date));
+        $('#offer_end_date').val(formatDate(response.data.offer_end_date));
+        $('#offer_settlement_date').val(formatDate(response.data.offer_settlement_date));
+        $('#offer_maturity_date').val(formatDate(response.data.offer_maturity_date));
 
-            $("#spinner-offers").hide();
-            $("#div-save-mdl-offer-modal").attr('disabled', false);
+        $('#tenor_years').val(response.data.tenor_years);
+
+        $("#spinner-offers").hide();
+        $("#div-save-mdl-offer-modal").attr('disabled', false);
         });
+
+        // Function to ensure proper date formatting
+        function formatDate(dateString) {
+        if (!dateString) return ''; // Handle null/empty values
+        let date = new Date(dateString);
+        let year = date.getFullYear();
+        let month = ('0' + (date.getMonth() + 1)).slice(-2);
+        let day = ('0' + date.getDate()).slice(-2);
+        return `${year}-${month}-${day}`;
+        }
+
     });
 
     //Delete action
