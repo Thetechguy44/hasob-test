@@ -6,7 +6,7 @@
         <div class="col-md-1">
             <img src="{{asset('imgs/user.png')}}" alt="..." class="card-img">
         </div>
-        <div class="col-md-9">
+        <div class="col-md-11">
             <div class="card-body">
                 @php
                     $detail_page_url = route('sb.offers.show', $data_item->id);
